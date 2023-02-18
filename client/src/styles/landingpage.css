@@ -1,0 +1,69 @@
+.landing-page-container{
+    height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("https://kitapbaskionline.com/kutuphane/images/test-resimleri/sl01.jpg");
+}   
+.landing-page-title{
+    color: rgb(164, 168, 26);
+}
+.landing-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.landing-page-text{
+    color:White;
+    width: 40%;
+    margin-top: 10%;
+}
+.landing-page-text p{
+    margin-top: 2rem;
+    font-size: 20px;
+}
+.landing-page-text p:last-child{
+    color: rgb(38, 38, 38);
+}
+.landing-page-text h1{
+    text-shadow: 5px 5px #444343;
+}
+.landing-page-icons{
+    border-radius: 10px;
+    background-color: white;
+    font-size: 48px;
+    position: absolute;
+    bottom:6rem;
+    background: radial-gradient(rgb(244, 244, 244),rgb(119, 119, 119));
+}
+.landing-page-icons i{
+    margin: 1rem;
+}
+.landing-page-icons a:nth-child(1){
+    color: rgb(151, 0, 126);
+}
+.landing-page-icons a:nth-child(2){
+    color: rgb(185, 52, 50);
+}
+.landing-page-icons a:nth-child(3){
+    color: rgb(46, 111, 158);
+}
+.landing-page-icons a:nth-child(4){
+    color: rgb(31, 148, 78);
+}
+
+@media(max-width: 900px){
+    .landing-page-container{
+        width: 100%;
+        background-color: antiquewhite;
+        height: 80vh;
+        position: relative;
+    }
+    .landing-page-text{
+        width: 90%;
+        
+    }
+    .landing-page-text h1{
+        text-align: center;
+    }
+    .landing-page-text h1{
+        text-shadow: 2px 2px #444343;
+    }
+}

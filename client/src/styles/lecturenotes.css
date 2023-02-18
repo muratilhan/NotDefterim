@@ -1,0 +1,166 @@
+.lecturenotes-container{
+    display: flex;
+    width: 100%;
+    margin: 1rem;
+    flex-direction: column;
+    border-radius: 3px;
+    border: 1px solid #343a40;
+}
+.lecturenotes-header{
+    color:white;
+    width: 100%;
+    background-color:#272b30;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lecturenotes-share{
+    padding: 0rem 1rem 0rem 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.lecturenotes-sort{
+    margin-right: 1rem;
+    display: flex;
+}
+.infos{
+    display: flex;
+    width: 100%;;
+    justify-content: space-between
+}
+.infos button{
+    margin:0 0 1rem 1rem
+}
+.infos span{
+    margin:0 2rem 1rem 0
+}
+
+.lecturenotes-sort select{
+    padding:0 1rem 0 1rem;
+    margin-left:1rem ;
+}
+.lecturesnotes-main{
+    width: auto
+}
+.table thead{
+    background-color: #343a40;
+    color:white;
+}
+.table thead th{
+    padding: 1rem;
+  
+}
+
+.lecturesnotes-main{
+    overflow: auto;
+}
+
+.lecturenotes-share button{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.share-link{
+    display: flex;
+    text-decoration: none;
+}
+
+span{
+    margin: 0;
+    padding: 0;
+}  
+.message-for-mobile{
+    display: none;
+}
+
+.pagination-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-link span{
+    color: rgba(255, 2, 2, 0.836);
+}
+
+@media(max-width: 900px){
+    .lecturenotes-container{
+        margin: 0;
+        max-height: 800px;
+    }
+    .message-for-mobile{
+        background-color: rgb(116, 116, 116);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .message-for-mobile h5{
+        margin: 0.5rem;
+    }
+    .table thead{
+		display: none;
+	}
+    
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+    
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+        border-bottom: 1px solid rgb(232, 232, 232)
+
+	}
+    .table td:last-child{
+		border-bottom: 2px solid rgb(90, 90, 90);
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+    .lecturenotes-share{
+        margin-top: 0.5rem;
+        height: auto;
+    }
+    .lecturenotes-share button{
+        padding: 0.5rem;
+    }
+    .lecturenotes-share h3{
+        font-size: 20px;
+    }
+    .lecturenotes-header{
+        margin-top: 0;
+        padding: 1rem;
+        
+    }
+    .infos button{
+        padding: 0;
+        margin-right: 2rem;
+
+    }
+    .infos{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    .infos span{
+        margin: 0;
+        padding: 0;
+    }
+
+}

@@ -1,0 +1,113 @@
+.hakkinda-page-container{
+    display: flex;
+    width: 100%;
+    margin:1rem 0 1rem 0;
+    font-size: 15px;
+    justify-content: center;
+    position: relative;
+}
+.hakkinda-page-announcement{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 30%;
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px;
+}
+.announcement-header{
+    background-color:#343a40;
+    border-radius: 10px;
+    border:1px solid #343a40;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+.hakkinda-page-announcement p{
+    padding: 1rem 1.5rem 0rem 1.5rem;
+}
+.hakkinda-page-info{
+    margin-left: 4rem;
+    width:25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+.contact{
+    margin-top: 2rem;
+}
+.hakkinda-page-li{
+    padding: 0.5rem;
+    font-size: 18px;
+}
+.hakkinda-page-info-header{
+    background-color:#343a40;
+    border-radius: 10px;
+    border:1px solid #343a40;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+.statistics li{
+    border-bottom: 1px solid rgb(219, 219, 219);
+    font-size: 18px;
+    padding: 0.7rem 2rem 0.7rem 0rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aliceblue;
+    width: 100%;
+
+}
+.hakkinda-page-contact-header{
+    width: 100%;
+    background-color:#343a40;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+.hi{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+}
+.hakkinda-book{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 300px;
+    bottom: 0;
+}
+@media(max-width: 900px){
+    .hakkinda-page-container{
+        display: flex;
+        flex-direction: column;
+        margin: 0
+    }
+    .hakkinda-page-announcement{
+        width: 100%;
+        margin: 0;
+    }
+    .hakkinda-page-info{
+        margin: 0;
+        width: auto;
+    }    
+    .hakkinda-page-container img{
+        display: none;
+    }
+    .hi{
+        width: 100%;
+    }
+    .search-header {
+        border-radius: 0;
+    }
+}

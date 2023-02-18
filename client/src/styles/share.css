@@ -1,0 +1,51 @@
+.share-container{
+    background-image:url("https://kitapbaskionline.com/kutuphane/images/test-resimleri/sl01.jpg");
+    height: 100vh;
+    padding-top: 1rem;
+}
+.share-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    color:black;
+    border: 2px solid rgb(122, 122, 122);
+}
+.share-container button{
+    width: 50%;
+    font-size: 20px;
+}
+
+.share-header{
+    background-color:#343a40;
+    margin: 0%;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    padding:1rem;
+    margin-bottom: 1rem;
+    
+}
+.form-group{
+    margin:0rem 2rem 0rem 2rem;
+    width: 80%;
+    align-items: flex-start;
+}
+@media(max-width:900px){
+    .share-container{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .share-form{
+        width: 100%;
+    }
+    .form-group{
+        margin:0.3rem 2rem 0.3rem 2rem;
+        width: 90%;
+    }
+}

@@ -1,0 +1,51 @@
+.single-note-update{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+.single-note-update button{
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    background-color: white;
+}
+.single-note-update button:hover{
+    background-color: #c8c8c8;
+}
+.single-note-update-icon{
+  color:black
+}
+.single-note-header{
+    background-color:#343a40;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color:white;
+    margin-bottom: 1rem;
+}
+.single-note-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.form-group-single{
+    width:80%;
+    justify-content: flex-start;
+    padding: 1rem;
+    color: black;
+}
+.torch{
+    color: rgb(255, 38, 0);
+}
+.single-edit-button{
+    width: 100%;
+}
+.single-edit-button button{
+    padding:0.5rem 0.5rem 0.5rem 0.5rem;
+    width: 50%;
+    font-size: 20px;
+}
+.single-note-form-label h5{
+    margin-left: 1rem;
+    font-weight: 400;
+}

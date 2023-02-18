@@ -1,0 +1,41 @@
+.auth-form{
+    width: 30%;
+    color:black;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    font-size: 20px;
+    padding-top: 7rem;
+    font-weight: 500;
+    
+}
+.auth-container{
+    height: 100vh;
+    background-image:url("https://kitapbaskionline.com/kutuphane/images/test-resimleri/sl01.jpg");
+}
+.auth-form input{
+    border: 2px solid black;
+}
+.auth-message{
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(183, 0, 0);
+}
+.auth-form i{
+    font-size: 14px;
+}
+@media(max-width:900px){
+    .auth-container{
+        width: 100%;
+        height: auto;
+    }
+    .auth-form{
+        padding: 3rem 0 5rem 0;
+        width: 90%;
+        height: auto;
+
+    }
+}

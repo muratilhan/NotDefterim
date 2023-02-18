@@ -1,0 +1,80 @@
+.footer-container{
+    height: auto;
+    width: 100%;
+    background-color:#343a40;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    }
+.footer-container > *  {
+    width: 33.3%;
+}
+.footer-text{
+    padding:1rem ;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: flex-end;
+}
+.email button{
+    font-size: 20px;
+    width: 40%;
+    margin-top: 0.5rem;
+}
+.email-container{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+}   
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer-logo li{
+    list-style: none;
+}
+.footer-logo li:hover{
+    color: rgb(151, 151, 37);
+    cursor: pointer;
+}
+.footer-img{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-img img{
+    height: 200px;  
+    
+}
+
+@media(max-width: 900px){
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .footer-logo{
+        width: 100%;
+    }
+    .footer-img{
+        display: none;
+    }
+    .email-container{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0;
+        margin-bottom: auto
+    }
+    .email{
+        width: 100%;
+    }
+    
+    
+}

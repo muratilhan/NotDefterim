@@ -1,0 +1,7 @@
+.notecard-container{
+    display: flex;
+
+}
+.notecard-container p{
+    margin: 1rem 2rem 0rem 2rem;
+}
