@@ -1,20 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Spinner from "./Spinner";
+import { Context } from "../App";
+import { useContext } from "react";
 
 function TopNUsers() {
-  const [topUsers, setTopUsers] = useState([]);
+  
+  const context = useContext(Context);
 
-  useEffect(() => {
-    const getTopUsers = async () => {
-      const res = await axios.get("https://notdefterim.onrender.com/user/topthree");
-      setTopUsers(res.data.reverse());
-    };
-    getTopUsers();
-  }, []);
-
-  if(topUsers.length === 0) return <Spinner></Spinner>
+  if(context.topUsers.length === 0) return <Spinner></Spinner>
 
   return (
     <div className="topNUsers-container" >
@@ -25,7 +19,7 @@ function TopNUsers() {
         </div>
         <div className="top-users-container">
           <ul>
-            {topUsers.map((user,index) => (
+            {context.topUsers.map((user,index) => (
               <li key={user._id}>
                 <h5>
                   <img src={require(`../styles/img/spot${index+1}.jpg`)} alt="none" />
@@ -56,7 +50,7 @@ function TopNUsers() {
           <Accordion.Body flush="true" className="accordion-body">
           <div className="top-users-container">
           <ul>
-            {topUsers.map((user,index) => (
+            {context.topUsers.map((user,index) => (
               <li key={user._id}>
                 <h5>
                   {" "}
