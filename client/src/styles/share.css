@@ -38,8 +38,12 @@
 }
 @media(max-width:900px){
     .share-container{
+        height: fit-content;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .share-container{
         width: 100%;
-        margin-top: 1rem;
     }
     .share-form{
         width: 100%;

@@ -11,6 +11,11 @@
     font-weight: 500;
     
 }
+.log-spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .auth-container{
     height: 100vh;
     background-image:url("https://kitapbaskionline.com/kutuphane/images/test-resimleri/sl01.jpg");

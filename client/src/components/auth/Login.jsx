@@ -5,10 +5,12 @@ import Form from "react-bootstrap/Form";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../../styles/auth.css";
 import { Context } from "../../App";
+import Spinner from "../Spinner";
 
 function Login() {
   const navigate = useNavigate();
   const context = useContext(Context);
+  const [spinner, setSpinner] = useState(false);
 
   const [form, setForm] = useState({
     email: "",
@@ -21,18 +23,22 @@ function Login() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setSpinner(true)
     try {
       const res = await axios.post("https://notdefterim.onrender.com/auth/login", form);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("accessToken", JSON.stringify(res.data.accessToken));
       context.setUser(res.data.user);
       context.setAccessToken(res.data.accessToken);
+      setSpinner(false)
       navigate("/home");
     } catch (err) {
+      setSpinner(false)
       alert("hatalı giriş");
     }
   };
 
+  if(spinner) return <div className="log-spinner"><Spinner/></div>
   return (
     <div className="auth-container">
       <Form onSubmit={handleClick} type="submit" className="auth-form">
@@ -56,7 +62,7 @@ function Login() {
           </Form.Label>
           <Form.Control
             minLength="5"
-            maxLength="10"
+            maxLength="20"
             required
             name="password"
             value={form.password}

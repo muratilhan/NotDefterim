@@ -54,7 +54,7 @@ function Register() {
 
           <Form.Group className="mb-1" controlId="">
             <Form.Label><i className="fa-solid fa-fingerprint"></i> Kullanıcı Adı*</Form.Label>
-            <Form.Control minLength="5" maxLength="10" name='username' required type="text" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" maxLength="15" name='username' required type="text" placeholder="" onChange={(e)=>handleChange(e)}/>
             <Form.Text className='auth-message'>
                 Bu alan eşsiz olmak zorundadır.
             </Form.Text>
@@ -71,7 +71,7 @@ function Register() {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label><i className="fa-solid fa-lock"></i> Şifreniz*</Form.Label>
-            <Form.Control minLength="5" name='password'  maxLength="15" required type="password" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" name='password'  maxLength="20" required type="password" placeholder="" onChange={(e)=>handleChange(e)}/>
           </Form.Group>
           <Form.Group className="mb-3">
           <Form.Text>
@@ -83,7 +83,7 @@ function Register() {
           <>
             <Form.Group>
               <Form.Text style={{color:"green"}}>Mailinize gelen 5 basamaklı kodu giriniz.</Form.Text>
-              <Form.Control minLength={5} maxLength="15" name='activationCode' required type="number" placeholder="doğrulama kodu" onChange={(e)=>handleChange(e)}/>
+              <Form.Control minLength="5" maxLength="5" name='activationCode' required type="number" placeholder="doğrulama kodu" onChange={(e)=>handleChange(e)}/>
             </Form.Group> 
             <Button type="submit" className='py-2 my-1' variant="dark"  >
                Kayıt Ol

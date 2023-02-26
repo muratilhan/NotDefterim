@@ -114,7 +114,7 @@ function SingleNote() {
           <Form.Group className="form-group-single">
             <Form.Label className="edit-title-label"><h5>Ders Notu Başlığı{editMode ? "*" : ":"} </h5></Form.Label>
             {editMode ?
-              <Form.Control required minLength="3" className='single-note-form-label'  maxLength="15" name="title" value={form.title} onChange={((e) => handleChange(e))} type="text" placeholder="ör: Final Çıkmış Sorular." />
+              <Form.Control required minLength="3" className='single-note-form-label'  maxLength="25" name="title" value={form.title} onChange={((e) => handleChange(e))} type="text" placeholder="ör: Final Çıkmış Sorular." />
               : <Form.Label style={{margin:"0"}} className='single-note-form-label'> <h5>{note.title}</h5> </Form.Label>}
           </Form.Group>
 

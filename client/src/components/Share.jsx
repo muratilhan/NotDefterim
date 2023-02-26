@@ -50,7 +50,7 @@ function Share() {
         </div>
         <Form.Group className="form-group" >
           <h5>Ders Notu Başlığı*</h5>
-          <Form.Control required minLength="3" maxLength="15" name="title" value={form.title} onChange={((e)=>handleChange(e))} type="text" placeholder="ör: Final Çıkmış Sorular." />
+          <Form.Control required minLength="3" maxLength="25" name="title" value={form.title} onChange={((e)=>handleChange(e))} type="text" placeholder="ör: Final Çıkmış Sorular." />
         </Form.Group>
 
         <Form.Group required className=" form-group">

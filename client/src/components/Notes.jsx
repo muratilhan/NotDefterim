@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../styles/lecturenotes.css"
+import Spinner from './Spinner'
 
 function Notes({notes}) {
+
+  if(notes.length === 0) return <tbody><Spinner/></tbody>   
   return (
     <tbody>{ notes.map((note) => (
         <tr key={note._id}>

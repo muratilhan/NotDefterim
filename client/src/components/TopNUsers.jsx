@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Spinner from "./Spinner";
 
 function TopNUsers() {
   const [topUsers, setTopUsers] = useState([]);
@@ -12,6 +13,8 @@ function TopNUsers() {
     };
     getTopUsers();
   }, []);
+
+  if(topUsers.length === 0) return <Spinner></Spinner>
 
   return (
     <div className="topNUsers-container" >

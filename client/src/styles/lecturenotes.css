@@ -16,27 +16,20 @@
     justify-content: center;
 }
 .lecturenotes-share{
-    padding: 0rem 1rem 0rem 1rem;
-    height: 80px;
+    padding:0.5rem 0.8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
 .lecturenotes-sort{
-    margin-right: 1rem;
     display: flex;
 }
 .infos{
     display: flex;
     width: 100%;;
-    justify-content: space-between
-}
-.infos button{
-    margin:0 0 1rem 1rem
-}
-.infos span{
-    margin:0 2rem 1rem 0
+    justify-content: space-between;
+    padding:0.5rem 0.8rem;
 }
 
 .lecturenotes-sort select{
@@ -52,14 +45,12 @@
 }
 .table thead th{
     padding: 1rem;
-  
 }
 
 .lecturesnotes-main{
     overflow: auto;
 }
-
-.lecturenotes-share button{
+.share-button{
     padding: 0.5rem 1rem 0.5rem 1rem;
 }
 .share-link{
@@ -88,7 +79,7 @@ span{
 @media(max-width: 900px){
     .lecturenotes-container{
         margin: 0;
-        max-height: 800px;
+        max-height: 600px;
     }
     .message-for-mobile{
         background-color: rgb(116, 116, 116);
@@ -137,7 +128,7 @@ span{
         margin-top: 0.5rem;
         height: auto;
     }
-    .lecturenotes-share button{
+    .share-button{
         padding: 0.5rem;
     }
     .lecturenotes-share h3{
@@ -146,21 +137,13 @@ span{
     .lecturenotes-header{
         margin-top: 0;
         padding: 1rem;
-        
     }
-    .infos button{
+    .share-button{
         padding: 0;
         margin-right: 2rem;
 
     }
-    .infos{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
+    .spinner{
+        width: 40px !important;
     }
-    .infos span{
-        margin: 0;
-        padding: 0;
-    }
-
 }
