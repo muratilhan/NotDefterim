@@ -7,6 +7,7 @@ import AccordionMenu from "./AccordionMenu";
 import TopNUsers from "./TopNUsers";
 import Select2 from 'react-select';
 import datas from "../datas/Data";
+import logo from '../styles/img/logo.png'
 
 function Sidebar() {
   const context = useContext(Context);
