@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/footer.css"
 import Email from './Email'
-import img from "../img/kitap.jpg"
+import img from '../styles/img/kitap.jpg'
 function Footer() {
   return (
     <div className='footer-container' id='footer'>

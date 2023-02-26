@@ -25,7 +25,7 @@ function TopNUsers() {
             {topUsers.map((user,index) => (
               <li key={user._id}>
                 <h5>
-                  <img src={require(`../img/spot${index+1}.jpg`)} alt="none" />
+                  <img src={require(`../styles/img/spot${index+1}.jpg`)} alt="none" />
                   {user.nameLastname}
                 </h5>{" "}
                 <span>
@@ -57,7 +57,7 @@ function TopNUsers() {
               <li key={user._id}>
                 <h5>
                   {" "}
-                  <img src={require(`../img/spot${index+1}.jpg`)} alt="none" />
+                  <img src={require(`../styles/img/spot${index+1}.jpg`)} alt="none" />
                   {user.nameLastname}
                 </h5>{" "}
                 <span>
