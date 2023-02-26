@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import AccordionMenu from "./AccordionMenu";
 import TopNUsers from "./TopNUsers";
 import Select2 from 'react-select';
-import logo from "../img/logo.png"
 import datas from "../datas/Data";
 
 function Sidebar() {
