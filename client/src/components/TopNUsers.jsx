@@ -7,7 +7,7 @@ function TopNUsers() {
 
   useEffect(() => {
     const getTopUsers = async () => {
-      const res = await axios.get("http://localhost:8888/user/topthree");
+      const res = await axios.get("https://notdefterim.onrender.com/user/topthree");
       setTopUsers(res.data.reverse());
     };
     getTopUsers();
@@ -80,34 +80,3 @@ function TopNUsers() {
 
 export default TopNUsers;
 
-/*
-<div style={{width:"100%"}}>
-      <div className="search-side topUsers">
-        <div className="search-header">
-          {" "}
-          <h4>TOP 3 </h4>
-        </div>
-        <div className="top-users-container">
-          <ul>
-            {topUsers.map((user) => (
-              <li key={user._id}>
-                <h5>
-                  {" "}
-                  <img src={logo} alt="" />
-                  {user.nameLastname}
-                </h5>{" "}
-                <span>
-                  {user.point}{" "}
-                  <i
-                    style={{ color: "orange" }}
-                    className="fa-solid fa-star"
-                  ></i>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-*/

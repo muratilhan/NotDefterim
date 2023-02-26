@@ -22,7 +22,7 @@ function Login() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8888/auth/login", form);
+      const res = await axios.post("https://notdefterim.onrender.com/auth/login", form);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("accessToken", JSON.stringify(res.data.accessToken));
       context.setUser(res.data.user);

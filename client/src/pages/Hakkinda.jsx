@@ -13,7 +13,7 @@ function Hakkinda() {
     
     useEffect(()=>{
         const fetchUsers = async () => {
-            const res = await axios.get("http://localhost:8888/user/users")
+            const res = await axios.get("https://notdefterim.onrender.com/user/users")
             setUserAmount(res.data.length);
         }
         fetchUsers();    

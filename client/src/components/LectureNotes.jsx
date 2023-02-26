@@ -19,7 +19,7 @@ function LectureNotes() {
         if(context.user){
             const fetchNotes = async() => {
             try{
-                const res = await axios.get("http://localhost:8888/note/",{
+                const res = await axios.get("https://notdefterim.onrender.com/note/",{
                 headers: {
                     authorization:"Bearer " + context.accessToken
                 }});

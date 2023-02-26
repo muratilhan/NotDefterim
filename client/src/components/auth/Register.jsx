@@ -28,7 +28,7 @@ function Register() {
     }
     else{
       try{  
-        const res = await axios.post("http://localhost:8888/auth/register",form)
+        const res = await axios.post("https://notdefterim.onrender.com/auth/register",form)
         navigate('/login');
         window.location.reload();
       }catch(err){
@@ -40,7 +40,7 @@ function Register() {
   const emailVerification = async (e) => {
     e.preventDefault();
     const email = "murattilhann08@gmail.com"
-    const res = await axios.post("http://localhost:8888/verificationCode/", { form })
+    const res = await axios.post("https://notdefterim.onrender.com/verificationCode/", { form })
     setVerificationCode(res.data)
     setActivateMode(true);
   }

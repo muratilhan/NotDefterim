@@ -28,7 +28,7 @@ function Share() {
     e.preventDefault();
     if(form.lectureName.length > 3 && form.url.includes("https") && (form.url.includes("cloud") || form.url.includes("drive"))){
       try{
-        const res = await axios.post("http://localhost:8888/note/",form,{
+        const res = await axios.post("https://notdefterim.onrender.com/note/",form,{
           headers: {
             authorization:"Bearer " + context.accessToken
           }})

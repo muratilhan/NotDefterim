@@ -31,7 +31,7 @@ function SingleNote() {
     if (context.user) {
       const getNote = async () => {
         try {
-          const res = await axios.get('http://localhost:8888/note/' + path, {
+          const res = await axios.get('https://notdefterim.onrender.com/note/' + path, {
             headers: {
               authorization: "Bearer " + context.accessToken
             }
@@ -69,7 +69,7 @@ function SingleNote() {
   const handleSave = async () => {
     try{
       if(form.url.includes("https") && (form.url.includes("cloud") || form.url.includes("drive"))){
-        const res = await axios.put(`http://localhost:8888/note/${note._id}`, form, {
+        const res = await axios.put(`https://notdefterim.onrender.com/note/${note._id}`, form, {
         headers: {
           authorization: "Bearer " + context.accessToken
         }
@@ -80,7 +80,7 @@ function SingleNote() {
     }catch(err){}
   }
   const handleDelete = async () => {
-    const res = await axios.delete(`http://localhost:8888/note/${note._id}`, {
+    const res = await axios.delete(`https://notdefterim.onrender.com/note/${note._id}`, {
       headers: {
         authorization: "Bearer " + context.accessToken
       },
