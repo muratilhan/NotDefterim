@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import "../styles/navbar.css"
 import { Context } from '../App';
-import kalem from "../img/kalem.jpg"
+import kalem from "../styles/img/kalem.jpg"
 
 function Topbar() {
   const navigate = useNavigate();
