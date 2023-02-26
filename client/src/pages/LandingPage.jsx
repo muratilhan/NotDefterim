@@ -7,7 +7,7 @@ function LandingPage() {
     <div className='landing-page-container'>
         <div className="landing-page-text">
           <h1>Not<span className="landing-page-title">Defterim</span>'e Hoşgeldiniz</h1>
-          <p> hihi
+          <p>
             Uludağ Üniversitesinde okuyan öğrenciler birbirleriyle yardımlaşmalarını kolaylaştırmayı amaçladığımız bu projemizde
             sizlerinde yer almanızı isteriz. <i style={{color:"pink"}} class="fa-solid fa-face-smile-wink"></i>
           </p>
