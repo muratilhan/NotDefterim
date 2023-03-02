@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import "../../styles/auth.css"
+import Spinner from '../Spinner';
 
 function Register() {
 
   const navigate = useNavigate();
+  const [isSpinnerActive, setIsSpinnerActive] = useState(false);
   const [activateMode, setActivateMode] = useState(false);
   const [form, setForm] = useState({
     nameLastname:"",
@@ -42,8 +44,8 @@ function Register() {
     const email = "murattilhann08@gmail.com"
     const res = await axios.post("https://notdefterim.onrender.com/verificationCode/", { form })
     setVerificationCode(res.data)
-    setActivateMode(true);
   }
+
   return (
     <div className='auth-container'>
         <Form onSubmit={handleClick} className='auth-form'>

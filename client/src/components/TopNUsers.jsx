@@ -2,13 +2,17 @@ import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
 import Spinner from "./Spinner";
 import { Context } from "../App";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 function TopNUsers() {
   
   const context = useContext(Context);
+  const [isActive, setIsActive] = useState(false);
 
   if(context.topUsers.length === 0) return <Spinner></Spinner>
+  const handleClick = () => {
+    setIsActive(!isActive)
+  }
 
   return (
     <div className="topNUsers-container" >
@@ -43,8 +47,12 @@ function TopNUsers() {
         className="accordionmenu-item"
       >
         <Accordion.Item eventKey="0" flush="true" style={{ width: "100%" }}>
-          <Accordion.Header bg="dark" className="accordion-header">
+          <Accordion.Header onClick={handleClick} bg="dark" className="accordion-header">
+            <div>
             <h2>Top 3</h2>
+            <b><i className={`fa-solid fa-arrow-${isActive ? "up" : "down"}`}></i></b>
+            </div>
+       
           </Accordion.Header>
 
           <Accordion.Body flush="true" className="accordion-body">

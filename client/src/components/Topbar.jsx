@@ -19,6 +19,16 @@ function Topbar() {
     navigate("/");
   };
 
+  const onClickNotes = (e) => {
+    e.preventDefault();
+    if(context.user){
+      navigate("/home")
+    }
+    else{
+      alert("Lütfen Oturum Açın..")
+    }
+  }
+
   return (
     <Navbar
       collapseOnSelect
@@ -43,7 +53,7 @@ function Topbar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Link className="topbar-navs" to={context.user ? "/home" : "/login"}>
+            <Link className="topbar-navs" onClick={onClickNotes}>
               <span>Ders Notları</span>
             </Link>
             <Link className="topbar-navs" to="/hakkinda">

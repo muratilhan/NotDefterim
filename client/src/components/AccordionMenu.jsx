@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Form } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import "../styles/accordionMenu.css"
@@ -14,12 +14,21 @@ function AccordionMenu() {
   const handleClear = () => {
     context.setFilteredNotes(context.notes)
   }
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive)
+  }
+
 
   return (
     <Accordion style={{width:"100%"}} bg="dark" className='accordionmenu-item'>
       <Accordion.Item eventKey="0" flush="true"  style={{width:"100%"}}>
-        <Accordion.Header bg="dark" className='accordion-header'> 
-       <div ><b><h2>Ders Notu Ara</h2></b> </div>
+        <Accordion.Header onClick={handleClick} bg="dark" className='accordion-header'> 
+       <div >
+        <b><h2>Ders Notu Ara</h2></b> 
+        <b><i className={`fa-solid fa-arrow-${isActive ? "down" : "up"}`}></i></b>
+        </div>
        </Accordion.Header>
        
         <Accordion.Body flush="true" className='accordion-body'>
