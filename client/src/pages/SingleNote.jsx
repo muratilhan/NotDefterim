@@ -76,7 +76,7 @@ function SingleNote() {
           authorization: "Bearer " + context.accessToken
         }
         })
-        window.location.reload()
+        window.location.reload();
       }else{
         alert("Hatalı Ders Notu Paylaşımı")
       }
@@ -137,7 +137,7 @@ function SingleNote() {
             <Form.Label className="label"><h5>Dersin Hocası{editMode ? "*" : ":"} </h5></Form.Label>
             {editMode ?
               <Form.Control required minLength="3" maxLength="15" name="instructorName" value={form.instructorName} onChange={((e) => handleChange(e))} type="text" placeholder="ör: Final Çıkmış Sorular." />
-              : <Form.Label style={{margin:"0"}} className='single-note-form-label'> <h5>{note.title}</h5> </Form.Label>}
+              : <Form.Label style={{margin:"0"}} className='single-note-form-label'> <h5>{note.instructorName}</h5> </Form.Label>}
           </Form.Group>
           { !editMode && 
           <Form.Group className="form-group-single">

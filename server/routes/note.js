@@ -4,14 +4,6 @@ const router = express.Router();
 const Note = require("../models/Note");
 const User = require("../models/User");
 const { verifyTokenAndAuthorization, verifyToken } = require('./verifyToken');
-/*
-    "title":"asdasdasd",
-    "lectureName":"asdasdasd",
-    "instructorName":"asdasdasd",
-    "username":"asdasdasd",
-    "url":"asdasdasd",
-    "description":"asdasdasd"
-*/
 
 // Create a new Note
 router.post('/',verifyToken, async (req, res) => {
