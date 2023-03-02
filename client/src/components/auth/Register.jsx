@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import "../../styles/auth.css"
-import Spinner from '../Spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
 
@@ -34,8 +35,9 @@ function Register() {
         const res = await axios.post("https://notdefterim.onrender.com/auth/register",form)
         navigate('/login');
         window.location.reload();
+        toast.success("Kayıt Olma Başarılı",{theme:"dark"});
       }catch(err){
-        alert("hatalı giriş") 
+        toast.error("Kayıt Olma Başarısız",{theme:"dark"});
       }
     }
   }
@@ -99,6 +101,7 @@ function Register() {
             </Button> }
           
         </Form>
+        <ToastContainer></ToastContainer>
     </div>
   );
 }

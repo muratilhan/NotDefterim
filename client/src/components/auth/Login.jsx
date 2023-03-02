@@ -6,6 +6,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../../styles/auth.css";
 import { Context } from "../../App";
 import Spinner from "../Spinner";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const navigate = useNavigate();
@@ -32,9 +34,10 @@ function Login() {
       context.setAccessToken(res.data.accessToken);
       setSpinner(false)
       navigate("/home");
+      toast.success("Hoşgeldiniz..",{theme:"dark"});
     } catch (err) {
       setSpinner(false)
-      alert("hatalı giriş");
+      toast.success("Hatalı Giriş.",{theme:"dark"});
     }
   };
 
@@ -82,6 +85,7 @@ function Login() {
         </Button>
       </Form>
       }
+      <ToastContainer />
     </div>
   );
 }

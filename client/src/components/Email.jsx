@@ -3,6 +3,8 @@ import "../styles/footer.css"
 import {Button} from "react-bootstrap"
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Email() {
@@ -12,26 +14,30 @@ function Email() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_shhswjk', 'template_qs1u3ec', form.current, 'l27wKaMvC4GWStTKb')
+    try{
+      emailjs.sendForm('service_shhswjk', 'template_qs1u3ec', form.current, 'l27wKaMvC4GWStTKb')
       .then((result) => {
-          console.log(result.text);
-          console.log("email sended")
-          alert('Mesajınız gönderildi..')
+        toast.success("Email Gönderildi..",{theme:"dark"});
+        console.log("email sended")
       }, (error) => {
-          console.log(error.text);
+        toast.error("Email Gönderildi..",{theme:"dark"});
       });
+    }catch(err){
+      toast.error("Başarısız..",{theme:"dark"})
+    }
   }
 
 
   return (
     <form ref={form} onSubmit={sendEmail} className='email'>
       <label>Name</label>
-      <input type="text" name="user_name" />
+      <input required type="text" name="user_name" />
       <label>Email</label>
-      <input type="email" name="user_email" />
+      <input required type="email" name="user_email" />
       <label>Message</label>
-      <textarea name="message" />
+      <textarea required name="message" />
       <Button type='submit' variant='success'>Gönder</Button>
+      <ToastContainer />
     </form>
   )
 }

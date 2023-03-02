@@ -7,6 +7,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Select2 from 'react-select';
 import datas from "../datas/Data";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 function Share() {
   
   const context = useContext(Context)
@@ -34,12 +39,13 @@ function Share() {
           }})
         localStorage.setItem("user", JSON.stringify(res.data));
         context.setUser(res.data) 
+        toast.success("Başarılı..",{theme:"dark"});
         navigate("/home")
       }catch(err){
           console.log(err)
       }
     }else{
-      alert("Hatalı Ders Notu Paylaşımı")
+      toast.error("Hatalı Not Paylaşımı..",{theme:"dark"});
     }
   }
   return (
@@ -80,6 +86,7 @@ function Share() {
           </Button>
         </Form.Group>
       </Form>
+      <ToastContainer />
     </div>
   );
 }

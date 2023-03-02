@@ -7,6 +7,9 @@ import NoteCard from '../cards/NoteCard';
 import { Button, Form } from 'react-bootstrap';
 import Select2 from 'react-select';
 import datas from "../datas/Data";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function SingleNote() {
 
 
@@ -76,9 +79,10 @@ function SingleNote() {
           authorization: "Bearer " + context.accessToken
         }
         })
-        window.location.reload();
+        toast.success("Ders Notu Kaydedildi..",{theme:"dark"});
+        navigate("/home")
       }else{
-        alert("Hatalı Ders Notu Paylaşımı")
+        toast.error("Başarısız..",{theme:"dark"});
       }
     }catch(err){}
   }
@@ -160,6 +164,7 @@ function SingleNote() {
               </Form.Label> : <></>}
           </Form.Group>
        </Form>
+       <ToastContainer></ToastContainer>
     </div>
   )
 }

@@ -6,6 +6,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import { Context } from "../App";
 import kalem from "../styles/img/kalem.jpg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Topbar() {
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ function Topbar() {
       navigate("/home")
     }
     else{
-      alert("Lütfen Oturum Açın..")
+      toast.error("Lütfen Oturum Açın..",{theme:"dark"});
     }
   }
 
@@ -74,6 +76,7 @@ function Topbar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <ToastContainer></ToastContainer>
     </Navbar>
   );
 }
