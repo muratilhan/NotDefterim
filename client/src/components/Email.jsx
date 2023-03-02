@@ -16,6 +16,7 @@ function Email() {
       .then((result) => {
           console.log(result.text);
           console.log("email sended")
+          Alert('Mesajınız gönderildi..')
       }, (error) => {
           console.log(error.text);
       });
