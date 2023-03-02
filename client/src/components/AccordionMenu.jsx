@@ -27,7 +27,7 @@ function AccordionMenu() {
         <Accordion.Header onClick={handleClick} bg="dark" className='accordion-header'> 
        <div >
         <b><h2>Ders Notu Ara</h2></b> 
-        <b><i className={`fa-solid fa-arrow-${isActive ? "down" : "up"}`}></i></b>
+        <b><i className={`fa-solid fa-arrow-${isActive ? "up" : "down"}`}></i></b>
         </div>
        </Accordion.Header>
        
