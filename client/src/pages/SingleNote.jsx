@@ -66,14 +66,17 @@ function SingleNote() {
     setForm({ ...note })
   }
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e.preventDefault();
     try{
       if(form.url.includes("https") && (form.url.includes("cloud") || form.url.includes("drive"))){
+        console.log(form)
         const res = await axios.put(`https://notdefterim.onrender.com/note/${note._id}`, form, {
         headers: {
           authorization: "Bearer " + context.accessToken
         }
         })
+        window.location.reload()
       }else{
         alert("Hatalı Ders Notu Paylaşımı")
       }

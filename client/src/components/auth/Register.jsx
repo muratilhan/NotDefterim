@@ -11,6 +11,7 @@ function Register() {
   const navigate = useNavigate();
   const [isSpinnerActive, setIsSpinnerActive] = useState(false);
   const [activateMode, setActivateMode] = useState(false);
+  const [onChangeActive, setOnChangeActive] = useState(false)
   const [form, setForm] = useState({
     nameLastname:"",
     username:"",
@@ -41,22 +42,24 @@ function Register() {
 
   const emailVerification = async (e) => {
     e.preventDefault();
+    setOnChangeActive(true)
     const email = "murattilhann08@gmail.com"
     const res = await axios.post("https://notdefterim.onrender.com/verificationCode/", { form })
     setVerificationCode(res.data)
+    setActivateMode(!activateMode)
   }
 
   return (
     <div className='auth-container'>
-        <Form onSubmit={handleClick} className='auth-form'>
+        <Form onSubmit={emailVerification} className='auth-form'>
           <Form.Group className="mb-3" >
             <Form.Label><i className="fa-solid fa-user"></i> İsim Soyisim*</Form.Label>
-            <Form.Control minLength="5" maxLength="15" name='nameLastname' required type="text" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" maxLength="15" name='nameLastname' required type="text" placeholder="" disabled={onChangeActive} onChange={(e)=>handleChange(e)}/>
           </Form.Group>
 
           <Form.Group className="mb-1" controlId="">
             <Form.Label><i className="fa-solid fa-fingerprint"></i> Kullanıcı Adı*</Form.Label>
-            <Form.Control minLength="5" maxLength="15" name='username' required type="text" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" maxLength="15" name='username' required type="text" placeholder="" disabled={onChangeActive} onChange={(e)=>handleChange(e)}/>
             <Form.Text className='auth-message'>
                 Bu alan eşsiz olmak zorundadır.
             </Form.Text>
@@ -65,7 +68,7 @@ function Register() {
           
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label><i className="fa-solid fa-at"></i> E-mail Adresiniz*</Form.Label>
-            <Form.Control minLength="5" name='email' required type="email" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" name='email' required type="email" placeholder="" disabled={onChangeActive} onChange={(e)=>handleChange(e)}/>
             <Form.Text className='auth-message'>
                   E-mail adresinizi hiçkimseyle paylaşmayacağız.
           </Form.Text>
@@ -73,7 +76,7 @@ function Register() {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label><i className="fa-solid fa-lock"></i> Şifreniz*</Form.Label>
-            <Form.Control minLength="5" name='password'  maxLength="20" required type="password" placeholder="" onChange={(e)=>handleChange(e)}/>
+            <Form.Control minLength="5" name='password'  maxLength="20" required type="password" disabled={onChangeActive} placeholder="" onChange={(e)=>handleChange(e)}/>
           </Form.Group>
           <Form.Group className="mb-3">
           <Form.Text>
@@ -87,13 +90,13 @@ function Register() {
               <Form.Text style={{color:"green"}}>Mailinize gelen 5 basamaklı kodu giriniz.</Form.Text>
               <Form.Control minLength="5" maxLength="5" name='activationCode' required type="number" placeholder="doğrulama kodu" onChange={(e)=>handleChange(e)}/>
             </Form.Group> 
-            <Button type="submit" className='py-2 my-1' variant="dark"  >
+            <Button onClick={handleClick} className='py-2 my-1' variant="dark"  >
                Kayıt Ol
             </Button>
           </> :
-            <Button onClick={emailVerification} className='py-2' variant="dark" >
+            <Button  type="submit"  className='py-2' variant="dark" >
               Gönder
-            </Button>  }
+            </Button> }
           
         </Form>
     </div>
