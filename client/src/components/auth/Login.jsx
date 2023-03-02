@@ -38,9 +38,10 @@ function Login() {
     }
   };
 
-  if(spinner) return <div className="log-spinner"><Spinner/></div>
   return (
     <div className="auth-container">
+      { spinner ? <div className="auth-spinner"><Spinner></Spinner></div>
+      :
       <Form onSubmit={handleClick} type="submit" className="auth-form">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>
@@ -80,6 +81,7 @@ function Login() {
           Oturum Aç
         </Button>
       </Form>
+      }
     </div>
   );
 }

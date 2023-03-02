@@ -9,8 +9,8 @@
     font-size: 20px;
     padding-top: 7rem;
     font-weight: 500;
-    
 }
+
 .log-spinner{
     display: flex;
     align-items: center;
@@ -19,6 +19,12 @@
 .auth-container{
     height: 100vh;
     background-image:url("https://kitapbaskionline.com/kutuphane/images/test-resimleri/sl01.jpg");
+}
+.auth-spinner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .auth-form input{
     border: 2px solid black;
