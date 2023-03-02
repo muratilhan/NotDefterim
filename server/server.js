@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use('/auth',authRoute)
 app.use('/note',noteRoute)
-
+app.use('/user',userRoute)
 app.use('/verificationCode', verificationCode)
 
 
