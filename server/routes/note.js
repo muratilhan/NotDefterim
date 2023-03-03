@@ -46,7 +46,6 @@ router.delete('/:id', verifyToken, async (req, res) => {
 
 // Update a Post
 router.put('/:id', verifyToken, async (req, res) => {
-    const note = await Note.findById(req.params.id);
         try{
             const updatedNote = await Note.findByIdAndUpdate(req.params.id,{
             $set:req.body

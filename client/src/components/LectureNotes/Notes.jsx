@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../styles/lecturenotes.css"
-import Spinner from './Spinner'
+import "../../styles/lecturenotes.css"
+import Spinner from '../Spinner'
 
-function Notes({notes}) {
+function Notes({currentNotes}) {
 
-  if(notes.length === 0) return <tbody><Spinner/></tbody>   
+  if(currentNotes.length === 0) return <tbody><Spinner/></tbody>   
   return (
-    <tbody>{ notes.map((note) => (
+    <tbody>{ currentNotes.map((note) => (
         <tr key={note._id}>
             <td data-label="Başlık:"> <Link style={{color:"black"}}  to={`/single/${note._id}`}>{note.title}</Link> </td>
             <td data-label="Dersin Adı:">{note.lectureName}</td>

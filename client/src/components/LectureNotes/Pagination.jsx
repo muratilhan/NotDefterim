@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/lecturenotes.css"
+import "../../styles/lecturenotes.css"
 
 
 function Pagination({ notesPerPage, totalNotes, paginate }) {

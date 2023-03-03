@@ -49,8 +49,8 @@ function TopNUsers() {
         <Accordion.Item eventKey="0" flush="true" style={{ width: "100%" }}>
           <Accordion.Header onClick={handleClick} bg="dark" className="accordion-header">
             <div>
-            <h2>Top 3</h2>
-            <b><i className={`fa-solid fa-arrow-${isActive ? "up" : "down"}`}></i></b>
+              <h2>Top 3</h2>
+              <b><i className={`fa-solid fa-arrow-${isActive ? "up" : "down"}`}></i></b>
             </div>
        
           </Accordion.Header>

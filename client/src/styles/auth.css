@@ -41,12 +41,15 @@
 @media(max-width:900px){
     .auth-container{
         width: 100%;
-        height: auto;
+       height: auto;
+       
     }
     .auth-form{
         padding: 3rem 0 5rem 0;
         width: 90%;
-        height: auto;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
 
     }
 }

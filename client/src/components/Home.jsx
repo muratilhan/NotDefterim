@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import "../styles/home.css"
 import Sidebar from './Sidebar'
-import LectureNotes from './LectureNotes'
+import LectureNotes from './LectureNotes/LectureNotes'
 function Home() {
 
   return (

@@ -3,6 +3,8 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const { verifyToken } = require('./verifyToken');
+const Note = require('../models/Note');
 
 
 
@@ -24,7 +26,42 @@ router.get('/topthree', async (req, res) => {
     res.status(200).json(topUsers)
 })
 
+router.put('/:id', verifyToken,  async (req, res) => {
+    try{
+        hashedPassword = await bcrypt.hash(req.body.password,10)
+        const user = await User.findById(req.params.id)
+        const updatedNote = await Note.updateMany({username: user.username},{
+            $set:{
+                username:req.body.username
+            }
+        },{ new: true })  
+        const updatedUser = await User.findByIdAndUpdate(req.params.id,{
+        $set:{
+            nameLastname: req.body.nameLastname,
+            username: req.body.username,
+            password: hashedPassword,
+            email:user.email
+        }
+    },{ new: true })
+       
+    return res.status(200).json(updatedUser)
+    }catch(err){
+        return res.status(400).json(err)
+    }
+})
 
-
+router.delete('/:id', verifyToken, async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id)
+        try{
+            await user.delete();
+            res.status(200).json(user)
+        }catch(err){
+            res.status(400).json(err)
+        }
+    }catch(err){
+        res.status(400).json(err);
+    }
+})
 
 module.exports = router

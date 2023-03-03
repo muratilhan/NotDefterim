@@ -26,11 +26,10 @@
     text-shadow: 5px 5px #444343;
 }
 .landing-page-icons{
+    margin-top: 5rem;
     border-radius: 10px;
     background-color: white;
     font-size: 48px;
-    position: absolute;
-    bottom:6rem;
     background: radial-gradient(rgb(244, 244, 244),rgb(119, 119, 119));
 }
 .landing-page-icons i{
@@ -54,11 +53,9 @@
         width: 100%;
         background-color: antiquewhite;
         height: 80vh;
-        position: relative;
     }
     .landing-page-text{
         width: 90%;
-        
     }
     .landing-page-text h1{
         text-align: center;

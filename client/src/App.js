@@ -6,7 +6,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Share from './components/Share';
 import Sidebar from './components/Sidebar';
-import LectureNotes from './components/LectureNotes';
+import LectureNotes from './components/LectureNotes/LectureNotes';
 import Hakkinda from "./pages/Hakkinda"
 import LandingPage from './pages/LandingPage';
 import {BrowserRouter, Routes, Route} from "react-router-dom"

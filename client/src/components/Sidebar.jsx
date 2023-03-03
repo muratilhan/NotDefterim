@@ -38,7 +38,7 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
       <div className="sidebar-profil">
-        <Link className="sidebar-profil-items">
+        <Link to="/updateprofile" className="sidebar-profil-items">
           <img style={{borderRadius:"50%"}} src={logo} alt="" />
           <div>
             <h4> {context.user?.nameLastname} </h4>

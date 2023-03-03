@@ -2,6 +2,7 @@ import "../styles/landingpage.css"
 
 function LandingPage() {
 
+  console.log("aaaa")
     
   return (
     <div className='landing-page-container'>
