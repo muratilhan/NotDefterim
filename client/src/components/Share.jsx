@@ -70,7 +70,7 @@ function Share() {
 
         <Form.Group className="form-group" controlId="formBasicEmail">
           <Form.Label><h5>Dersin Hocası*</h5> </Form.Label>
-          <Form.Control required minLength="3" maxLength="15"  name="instructorName" value={form.instructorName} onChange={((e)=>handleChange(e))} type="text" placeholder="ör: Cemal Süreya" />
+          <Form.Control required minLength="3" maxLength="20"  name="instructorName" value={form.instructorName} onChange={((e)=>handleChange(e))} type="text" placeholder="ör: Cemal Süreya" />
         </Form.Group>
         <Form.Group className="form-group" controlId="formBasicEmail">
           <Form.Label><h5>Drive/Cloud Linki*</h5> </Form.Label>
