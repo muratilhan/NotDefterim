@@ -23,9 +23,8 @@ function UpdateProfile() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  useEffect(()=>{
-console.log(form)
-  },[form])
+
+
   const handleSave = async (e) => {
     e.preventDefault();
     try{
@@ -46,7 +45,8 @@ console.log(form)
     console.log(context.user)
   },[context.user])
 
-  const handleDelete = async () => {
+  const handleDelete = async (e) => {
+    e.preventDefault();
     const res = await axios.delete(`https://notdefterim.onrender.com/user/${context.user._id}`, {
       headers: {
         authorization: "Bearer " + context.accessToken
@@ -57,13 +57,21 @@ console.log(form)
     context.setUser(null);
     navigate('/login')
   }
+  const edit = (e) => {
+    e.preventDefault()
+    setEditMode(true)
+  }
+  const cancel = (e) => {
+    e.preventDefault()
+    setEditMode(false)
+  }
 
   return (
     <div className='share-container'>
       <Form onSubmit={handleSave} className='share-form'>
         <div className='single-note-header'>
             <div className='single-note-title'><h3><i className="fa-brands fa-gripfire torch"></i> Profilim <i  className="fa-brands fa-gripfire torch"></i></h3></div>          
-              <Button onClick={handleDelete} variant='danger' className='profileUpdateButton'>Hesabı Sil</Button>
+              <button onClick={handleDelete} className='profileUpdateButton'>Hesabı Sil</button>
         </div>
         <Form.Group className="form-group-single" >
             <Form.Label><h5>Ad Soyad{editMode ? "*" : ":"}   </h5> </Form.Label>
@@ -81,8 +89,8 @@ console.log(form)
               : <Form.Label className='single-note-form-label'> <h5> its a secret </h5> </Form.Label>}
           </Form.Group>
           <Form.Group className="form-group-single" >
-            {editMode ? <div className='updateProfileButtons'> <Button variant='danger' onClick={()=>setEditMode(false)}>İptal Et</Button> <Button variant='success' type="submit">Kaydet</Button></div>
-              : <div className='updateProfileButtons'> <Button  variant='warning' onClick={()=>setEditMode(true)}>Düzenle</Button></div>}
+            {editMode ? <div className='updateProfileButtons'> <button className='profileUpdateButton' onClick={(e)=>cancel(e)}>İptal Et</button> <button className='profileUpdateButton' type="submit">Kaydet</button></div>
+              : <div className='updateProfileButtons'> <button className='profileUpdateButton' onClick={(e)=>edit(e)}>Düzenle</button></div>}
           </Form.Group>
        </Form>
        <ToastContainer />
