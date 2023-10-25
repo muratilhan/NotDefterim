@@ -15,10 +15,12 @@ function LectureNotes() {
   
   const context = useContext(Context);
   const navigate = useNavigate();
+  const [activeSpinner, setActiveSpinner] = useState(false);
 
   useEffect(() => {
     if (context.user) {
       const fetchNotes = async () => {
+        setActiveSpinner(true);
         try {
           const res = await axios.get(
             "https://notdefterim.onrender.com/note/",
@@ -28,6 +30,7 @@ function LectureNotes() {
               },
             }
           );
+          setActiveSpinner(false);
           context.setNotes(res.data);
           context.setFilteredNotes(res.data);
         } catch (err) {
@@ -62,7 +65,7 @@ function LectureNotes() {
       <LectureNotesInfoTop></LectureNotesInfoTop>
       <LectureNotesInfoBottom></LectureNotesInfoBottom>
       <MessageForMobile></MessageForMobile>
-      <LectureNotesMain currentNotes={currentNotes}  ></LectureNotesMain>
+      <LectureNotesMain currentNotes={currentNotes} activeSpinner={activeSpinner}  ></LectureNotesMain>
       <Pagination
             notesPerPage={notesPerPage}
             totalNotes={context.filteredNotes.length}

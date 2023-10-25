@@ -1,7 +1,7 @@
 import React from 'react'
 import Notes from './Notes';
 
-const LectureNotesMain = ({currentNotes}) => {
+const LectureNotesMain = ({currentNotes,activeSpinner}) => {
     const titles = [
         "Başlık",
         "Dersin Adı",
@@ -20,7 +20,7 @@ const LectureNotesMain = ({currentNotes}) => {
             ))}
             </tr>
         </thead>
-        <Notes currentNotes={currentNotes}></Notes>
+        <Notes currentNotes={currentNotes} activeSpinner={activeSpinner}></Notes>
         </table>
     </div>
   )

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import "../../styles/lecturenotes.css"
 import Spinner from '../Spinner'
 
-function Notes({currentNotes}) {
+function Notes({currentNotes,activeSpinner}) {
 
-  if(currentNotes.length === 0) return <tbody><Spinner/></tbody>   
+  if(activeSpinner) return <tbody><Spinner/></tbody>   
   return (
-    <tbody>{ currentNotes.map((note) => (
+    <tbody>{ currentNotes && currentNotes.map((note) => (
         <tr key={note._id}>
             <td data-label="Başlık:"> <Link style={{color:"black"}}  to={`/single/${note._id}`}>{note.title}</Link> </td>
             <td data-label="Dersin Adı:">{note.lectureName}</td>
