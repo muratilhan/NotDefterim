@@ -41,7 +41,9 @@ function LectureNotes() {
           navigate("/login");
         }
       };
-      fetchNotes();
+      if(!context.Notes){
+        fetchNotes();
+      }
     }
   }, [context.user]);
 
