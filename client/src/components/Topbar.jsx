@@ -47,7 +47,7 @@ function Topbar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Link className="topbar-navs">
+            <Link className="topbar-navs" to="/home">
               <span>Ders Notları</span>
             </Link>
             <Link className="topbar-navs" to="/hakkinda">
