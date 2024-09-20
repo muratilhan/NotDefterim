@@ -21,15 +21,7 @@ function Topbar() {
     navigate("/");
   };
 
-  const onClickNotes = (e) => {
-    e.preventDefault();
-    if(context.user){
-      navigate("/home")
-    }
-    else{
-      toast.error("Lütfen Oturum Açın..",{theme:"dark"});
-    }
-  }
+
 
   return (
     <Navbar
@@ -55,7 +47,7 @@ function Topbar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Link className="topbar-navs" onClick={onClickNotes}>
+            <Link className="topbar-navs">
               <span>Ders Notları</span>
             </Link>
             <Link className="topbar-navs" to="/hakkinda">
